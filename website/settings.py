@@ -26,7 +26,7 @@ SECRET_KEY = '8+$bbehko3lovj-c-%pl=7dcl6ysoc^n$)6dgabd-x3ja%*hq)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1" ]
+ALLOWED_HOSTS = ["*" ]
 
 
 # Application definition
@@ -86,10 +86,22 @@ AUTH_USER_MODEL = 'accounts.Account'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+# settings.py
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',  # Database engine
+        'NAME': 'ecom',              # Database name
+        'USER': 'postgres',              # Database username
+        'PASSWORD': '123',      # Database password
+        'HOST': 'localhost',                        # Database host (leave empty for localhost)
+        'PORT': '5432',                                # Database port (leave empty for default port)
     }
 }
 
